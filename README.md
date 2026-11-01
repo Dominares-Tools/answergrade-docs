@@ -12,7 +12,7 @@ Buy answergrade at https://dominares.org/tools/answergrade: one payment of $99, 
 
 Requirements: The Python standard library. The [http] extra adds httpx.
 
-This page documents version 1.1.2. Install commands and file paths in the documentation below run inside the private repository you are invited to; the source is not in this repository.
+This page documents version 1.1.3. Install commands and file paths in the documentation below run inside the private repository you are invited to; the source is not in this repository.
 
 ## Documentation
 
@@ -298,8 +298,9 @@ An invented category is **could not grade** only when the flag is missing or tru
 (`{"category": "banana"}`, `{"flag": true, "category": "banana"}`).
 **A verdict with `"flag": false` and an invented category is graded as a pass, not as "could not
 grade"**: `{"flag": false, "category": "banana"}` passes, because a clear `false` is what the code reads and
-the unknown category beside it is ignored. That is all the code checks: it rejects malformed
-verdicts. A verdict that is well formed but wrong, including a flag on a problem the answer
+the unknown category beside it is ignored. This is deliberate: the code takes a well-formed verdict as
+given, and the prompt tells the judge to default to not flagging. That is all the code checks: it rejects
+malformed verdicts. A verdict that is well formed but wrong, including a flag on a problem the answer
 does not have, still counts as a flag.
 A `source_id` the judge names that was not among the sources it was given is dropped, and
 `evidence_verified` says whether the quote it gave really appears in the sources or facts. Those answers are

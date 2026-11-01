@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.3 (2026-10-31)
+
+README only. No code change.
+
+- The README now says plainly what a judge's clear `false` does with a category the rubric does not know: the case is a PASS (a clear verdict is taken as given), not "could not grade". The behaviour is unchanged since 1.1.0; only the explanation is new.
+
 ## 1.1.2 (2026-10-05)
 
 Tests only. No code change.
